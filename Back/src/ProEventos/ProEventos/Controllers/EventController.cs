@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using ProEventos.Data;
 using ProEventos.Models;
+using SQLitePCL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +14,10 @@ namespace ProEventos.Controllers
     [Route("[controller]")]
     public class EventController : ControllerBase
     {
-        public EventController()
+        private readonly DataContext _context;
+        public EventController(DataContext context)
         {
-
+            _context = context;
         }
 
         [HttpGet]
