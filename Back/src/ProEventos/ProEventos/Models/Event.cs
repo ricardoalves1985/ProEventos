@@ -14,6 +14,6 @@ namespace ProEventos.Models
         public string PeopleCount { get; set; }
         public string Lote { get; set; }
         public string URLImage { get; set; }
-        //testando new repository
+       
     }
 }
