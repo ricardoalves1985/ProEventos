@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http'
 })
 export class EventsComponent implements OnInit {
 
-  public events: any;
+  public events: any = [];
   constructor(private http: HttpClient){}
 
   ngOnInit(): void {
