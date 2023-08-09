@@ -1,13 +1,14 @@
 <h2>Eventos</h2>
 <hr>
 
-<form action="" class="form-inline">
+<div  class="form-inline">
   <div class="form-group mb-2">
-    <input type="text" class="form-control mr-2" placeholder="buscar">
-    <button clas="btn btn.router-outlet-success">Buscar</button>
+    <label class="mr-2">Filtro: </label>
+    <input type="text" class="form-control mr-2" placeholder="buscar" [(ngModel)]="filterList">
+
 
   </div>
-</form>
+</div>
 
 <table class="table table-striped">
   <thead class="thead-dark">
@@ -23,7 +24,7 @@
     </tr>
   </thead>
   <tbody *ngIf="events && events.length">
-    <tr *ngFor="let event of events">
+    <tr *ngFor="let event of eventsFilter">
     <td>{{event.eventId}} </td>
     <td>
       <img src="/assert/{{event.urlImage}}"
@@ -34,6 +35,10 @@
     <td>{{event.eventDate}}</td>
     <td>{{event.peopleCount}}</td>
     <td>{{event.lote}}</td>
+    <td>
+      <button type="button" class="btn btn-primary btn-sm mr-2">Editar</button>
+      <button type="button" class="btn btn-danger btn-sm">Excluir</button>
+    </td>
   </tr>
   </tbody>
 
